@@ -132,7 +132,27 @@ CREATE TABLE movies (
     title TEXT NOT NULL,
     year_released INTEGER NOT NULL,
     mpaa_rating TEXT NOT NULL
-    studio_id INT NOT NULL,
+    studio_id INT NOT NULL, 
+    FOREIGN KEY (studio_id) REFERENCES STUDIOS (ID)
+);
+
+-- Table for actors
+
+CREATE TABLE actors (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL
+);
+
+-- Table for roles (many to many between actors and movies)
+
+CREATE TABLE roles (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    movie_id INTEGER NOT NULL,
+    actor_id INTEGER NOT NULL,
+    character_name TEXT NOT NULL,
+    FOREIGN KEY () REFERENCES movies (),
+    FOREIGN KEY () REFERENCES actors ()
+);
     
 
 -- Insert data into your database that reflects the sample data shown above
