@@ -206,8 +206,10 @@ VALUES
 (3, 11, 'Selina Kyle');
 
 .mode column
-.headers on
-select * FROM roles;
+.headers off
+-- select * FROM roles;
+
+
 
 -- Prints a header for the movies output
 .print "Movies"
@@ -216,6 +218,13 @@ select * FROM roles;
 
 -- The SQL statement for the movies output
 -- TODO!
+
+Select title as "Movie Title",
+year_released as "Year",
+mpaa_rating as "Rating",
+name as "Studio"
+from movies as m
+JOIN studios ON m.studio_id = studios.id;
 
 -- Prints a header for the cast output
 .print ""
@@ -226,3 +235,11 @@ select * FROM roles;
 
 -- The SQL statement for the cast output
 -- TODO!
+ SELECT
+ m.title as "Movie Title",
+ a.name as "actor",
+ r.character_name as "Character"
+ FROM roles as r 
+ JOIN movies m on r.movie_id = m.id
+ JOIN actors a on r.actor_id = a.id
+ ORDER BY m.title, r.id;
