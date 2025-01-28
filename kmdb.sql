@@ -183,8 +183,10 @@ VALUES
 ('Maggie Gyllenhaal'),
 ('Tom Hardy'),
 ('Joseph Gordon-Levitt'),
-('Anne Hathaway');
+('Anne Hathaway'),
+('Cilian Murphy');
 
+Select * FROM actors;
 
 -- Roles
 INSERT INTO roles (movie_id, actor_id, character_name)
@@ -203,7 +205,8 @@ VALUES
 (3, 5, 'Commissioner Gordon'),
 (3, 9, 'Bane'),
 (3, 10, 'John Blake'),
-(3, 11, 'Selina Kyle');
+(3, 11, 'Selina Kyle'),
+(1, 12, 'Scarecrow');
 
 .mode column
 .headers off
